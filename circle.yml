@@ -8,5 +8,6 @@ dependencies:
 
 test:
   override:
-    - docker run -ti comet bash -c "cd /root/ ; source activate comet ; jupyter nbconvert --to html --output-dir=$CIRCLE_ARTIFACTS --ExecutePreprocessor.timeout=-1 --execute COMET.ipynb ":
+    - docker run -t comet -v `pwd`:/notebook bash -c "/get_html.sh":
         timeout: 900
+    - mv COMET.html $CIRCLE_ARTIFACTS

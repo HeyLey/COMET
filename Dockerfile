@@ -5,7 +5,9 @@ RUN cd root; wget -q https://cernbox.cern.ch/index.php/s/OuxEIMWpvA4ZlS7/downloa
 
 COPY environment.yml /root/
 
-RUN conda env create -f /root/environment.yml
+RUN conda env create -q -f /root/environment.yml
 
-COPY COMET.ipynb /root/
-COPY get_html.sh /root/
+COPY get_html.sh /
+
+RUN mkdir /notebook
+
