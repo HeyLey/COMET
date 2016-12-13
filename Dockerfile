@@ -1,7 +1,7 @@
 
 FROM continuumio/miniconda
 
-RUN cd root; wget https://cernbox.cern.ch/index.php/s/OuxEIMWpvA4ZlS7/download -O data.tgz; tar xzf --no-same-owner data.tgz
+RUN cd root; wget -q https://cernbox.cern.ch/index.php/s/OuxEIMWpvA4ZlS7/download -O data.tgz; tar -xzof data.tgz
 
 COPY environment.yml /root/
 
