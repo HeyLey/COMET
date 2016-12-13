@@ -1,0 +1,14 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t comet . 
+
+test:
+  override:
+    - docker run -ti comet bash -c
+        "cd /root/ ;
+         source activate comet ;
+         jupyter nbconvert --to html --output-dir=$CIRCLE_ARTIFACTS --ExecutePreprocessor.timeout=-1 --execute COMET.ipynb "
