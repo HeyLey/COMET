@@ -8,6 +8,6 @@ dependencies:
 
 test:
   override:
-    - docker run -t comet -v `pwd`:/notebook bash -c "/get_html.sh":
+    - docker run -t -v `pwd`:/notebook comet bash -c "/get_html.sh":
         timeout: 900
     - mv COMET.html $CIRCLE_ARTIFACTS
