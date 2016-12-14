@@ -1,10 +1,9 @@
 #!/bin/bash
 
-cp /notebook/COMET.ipynb /root
-cd /root
+cp /home/jupyter/shared/COMET.ipynb /home/jupyter/
 
-source activate comet
+source activate py27
 
-jupyter nbconvert --to=html --ExecutePreprocessor.timeout=900 --execute COMET.ipynb
+ipython nbconvert --to=html --ExecutePreprocessor.timeout=900 --execute COMET.ipynb
 
-mv /root/COMET.html /notebook
+mv COMET.html /home/jupyter/shared/
