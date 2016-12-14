@@ -9,5 +9,5 @@ dependencies:
 test:
   override:
     - docker run -t -v `pwd`:/home/jupyter/shared comet bash -c "/home/jupyter/get_html.sh":
-        timeout: 900
+        timeout: 1500
     - mv COMET.html $CIRCLE_ARTIFACTS
