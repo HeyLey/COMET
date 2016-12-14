@@ -1,7 +1,7 @@
 
 FROM everware/base
 
-RUN wget -q https://cernbox.cern.ch/index.php/s/OuxEIMWpvA4ZlS7/download -O data.tgz; tar -xzof data.tgz
+RUN wget -q https://cernbox.cern.ch/index.php/s/OuxEIMWpvA4ZlS7/download -O data.tgz; tar -xzof data.tgz 2>/dev/null 
 
 USER root
 
